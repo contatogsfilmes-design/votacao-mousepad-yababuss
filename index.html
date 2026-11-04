@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vote no mousepad YabaBuss</title>
+<meta name="description" content="Veja os 5 modelos e escolha o seu favorito.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vote no mousepad YabaBuss">
+<meta property="og:description" content="Veja os 5 modelos e escolha o seu favorito.">
+<meta property="og:url" content="https://contatogsfilmes-design.github.io/votacao-mousepad-yababuss/">
+<meta property="og:image" content="https://contatogsfilmes-design.github.io/votacao-mousepad-yababuss/assets/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap">
+<style>
+:root{--preto:#000;--chumbo:#282828;--cinza:#646464;--nude:#F4F4F4;--suave:#B5B5B5;--linha:#3A3A3A;--fonte:Sora,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--preto);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--preto);color:var(--nude);font-family:var(--fonte);font-size:16px;line-height:1.5;padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+img{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--nude);outline-offset:2px}
+.margem{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:680px;margin:0 auto}
+header{padding-top:calc(24px + env(safe-area-inset-top,0px));padding-bottom:12px}
+.logo{width:132px;height:auto}
+h1{font-size:clamp(1.75rem,8vw,2.4rem);line-height:1.12;font-weight:500;letter-spacing:-.02em;margin:28px 0 10px;text-wrap:balance}
+.intro{margin:0;color:var(--suave)}
+#aviso{margin:20px 0 0;padding:12px 14px;background:var(--chumbo);border-radius:8px;font-size:.92rem}
+#modelos{display:grid;gap:40px;margin-top:28px}
+.modelo{min-width:0}
+.modelo h2{font-size:1.35rem;font-weight:500;margin:0;letter-spacing:-.01em}
+.cab{display:flex;gap:10px;align-items:baseline}
+.cab span{color:var(--suave);font-size:.9rem;font-variant-numeric:tabular-nums}
+.modelo p{margin:4px 0 12px;color:var(--suave);font-size:.95rem}
+.foto{display:block;width:100%;padding:0;border:0;background:var(--chumbo);border-radius:8px;overflow:hidden;position:relative}
+.foto img{width:100%;height:auto}
+.foto small{position:absolute;right:8px;bottom:8px;padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.72);color:var(--nude);font-size:.72rem}
+.rot{display:block;font-size:.78rem;letter-spacing:.04em;color:var(--suave);margin:12px 0 6px}
+.arte{box-shadow:inset 0 0 0 1px var(--linha)}
+.escolher{display:flex;align-items:center;gap:12px;margin-top:14px;min-height:56px;padding:12px 16px;border:1.5px solid var(--cinza);border-radius:8px;font-weight:500}
+.escolher input{appearance:none;-webkit-appearance:none;flex:none;width:24px;height:24px;margin:0;border:2px solid var(--suave);border-radius:50%;background:transparent}
+.escolher input:checked{border:7px solid var(--preto);background:var(--preto);box-shadow:0 0 0 2px var(--preto)}
+.escolher:has(input:checked){background:var(--nude);border-color:var(--nude);color:var(--preto)}
+.escolher:has(input:focus-visible){outline:3px solid var(--nude);outline-offset:2px}
+#barra{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--chumbo);border-top:1px solid var(--linha);padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#barra div{max-width:648px;margin:0 auto}
+.acao{display:block;width:100%;min-height:52px;border:0;border-radius:8px;background:var(--nude);color:var(--preto);font-weight:600;padding:10px 16px}
+.acao:disabled{background:var(--cinza);color:var(--nude);cursor:not-allowed}
+dialog{border:0;padding:0;color:var(--nude);background:transparent;max-width:none;max-height:none}
+dialog::backdrop{background:rgba(0,0,0,.82)}
+#folha{position:fixed;inset:auto 0 0;width:100%;margin:0}
+#folha form{max-width:680px;margin:0 auto;background:var(--chumbo);border-radius:14px 14px 0 0;padding-top:22px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+#folha h2{margin:0;font-size:1.3rem;font-weight:500}
+#folha label{display:grid;gap:6px;font-size:.9rem}
+#nome{width:100%;min-height:52px;padding:10px 14px;border:1.5px solid var(--suave);border-radius:8px;background:var(--preto);font-size:16px}
+#erro{margin:0;color:var(--nude);background:#000;padding:10px 12px;border-radius:6px;font-size:.9rem}
+.secundario{min-height:48px;border:0;background:none;color:var(--suave)}
+#zoom{width:100%;height:100%;margin:0;background:var(--preto)}
+#zoom[open]{display:flex;flex-direction:column}
+#zoom figure{flex:1;min-height:0;margin:0;overflow:auto;display:flex;align-items:center;padding:8px}
+#zoom img{width:100%;height:auto;margin:auto}
+#zoom .fim{padding:10px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+#resultado{padding-top:32px}
+#resultado h1{margin-top:0}
+.linha-r{display:grid;gap:6px}
+#lista{display:grid;gap:18px;margin:26px 0 0;padding:0;list-style:none}
+.t{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.t b{font-weight:500}
+.t span{color:var(--suave);font-variant-numeric:tabular-nums;font-size:.92rem;white-space:nowrap}
+.trilho{height:10px;background:var(--chumbo);border-radius:5px;overflow:hidden}
+.trilho i{display:block;height:100%;background:var(--nude);border-radius:5px;transition:width .4s}
+.meu .t b::after{content:" · seu voto";color:var(--suave);font-weight:400;font-size:.85rem}
+.mini{display:grid;gap:12px;margin-top:8px}
+.mini img{width:100%;height:auto;border-radius:8px}
+footer{margin-top:44px;color:var(--suave);font-size:.8rem}
+@media (prefers-reduced-motion:reduce){.trilho i{transition:none}}
+</style>
+</head>
+<body>
+<header class="margem">
+  <img class="logo" src="assets/logo.svg" width="1600" height="419" alt="YabaBuss">
+  <div id="topo">
+    <h1>Qual mousepad fica na sua mesa?</h1>
+    <p class="intro">Veja os 5 modelos, toque nas imagens para ampliar e escolha o seu favorito. Cada pessoa vota uma vez.</p>
+    <p id="aviso" hidden></p>
+  </div>
+</header>
+<main id="votacao" class="margem">
+  <form id="modelos" aria-label="Modelos de mousepad"></form>
+  <footer>Tamanho dos mousepads: 90 × 40 cm. As imagens em mesa são simulações.</footer>
+</main>
+<section id="resultado" class="margem" hidden aria-live="polite">
+  <h1 id="r-titulo">Voto registrado</h1>
+  <p class="intro" id="r-total"></p>
+  <ol id="lista"></ol>
+  <footer>O resultado é atualizado sozinho conforme as pessoas votam.</footer>
+</section>
+<div id="barra"><div><button class="acao" id="votar" type="button" disabled>Escolha um modelo</button></div></div>
+<dialog id="folha">
+  <form id="f-nome" novalidate>
+    <h2 id="f-titulo">Confirme seu voto</h2>
+    <label for="nome">Seu nome
+      <input id="nome" name="nome" type="text" autocomplete="name" maxlength="60" enterkeyhint="send" required>
+    </label>
+    <p id="erro" hidden role="alert"></p>
+    <button class="acao" id="confirmar" type="submit">Confirmar voto</button>
+    <button class="secundario" id="cancelar" type="button">Voltar aos modelos</button>
+  </form>
+</dialog>
+<dialog id="zoom" aria-label="Imagem ampliada">
+  <figure><img id="zoom-img" alt=""></figure>
+  <div class="fim"><button class="acao" id="zoom-fechar" type="button">Fechar</button></div>
+</dialog>
+<script src="firebase-config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
