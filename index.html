@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Vote no mousepad YabaBuss</title>
-<meta name="description" content="Veja os 5 modelos e escolha o seu favorito.">
+<meta name="description" content="Coloque seu nome, veja os 5 modelos e vote no seu favorito.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vote no mousepad YabaBuss">
-<meta property="og:description" content="Veja os 5 modelos e escolha o seu favorito.">
+<meta property="og:description" content="Coloque seu nome, veja os 5 modelos e vote no seu favorito.">
 <meta property="og:url" content="https://contatogsfilmes-design.github.io/votacao-mousepad-yababuss/">
 <meta property="og:image" content="https://contatogsfilmes-design.github.io/votacao-mousepad-yababuss/assets/compartilhar.jpg">
 <meta property="og:image:width" content="1200">
@@ -22,6 +22,7 @@
 *{box-sizing:border-box}
 html{background:var(--preto);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--preto);color:var(--nude);font-family:var(--fonte);font-size:16px;line-height:1.5;padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+[hidden]{display:none!important}
 img{display:block;max-width:100%}
 button,input{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -31,7 +32,10 @@ header{padding-top:calc(24px + env(safe-area-inset-top,0px));padding-bottom:12px
 .logo{width:132px;height:auto}
 h1{font-size:clamp(1.75rem,8vw,2.4rem);line-height:1.12;font-weight:500;letter-spacing:-.02em;margin:28px 0 10px;text-wrap:balance}
 .intro{margin:0;color:var(--suave)}
-#aviso{margin:20px 0 0;padding:12px 14px;background:var(--chumbo);border-radius:8px;font-size:.92rem}
+#entrada{display:grid;gap:12px;margin-top:24px}
+#entrada label{font-size:.95rem;color:var(--suave)}
+.erro{margin:0;padding:10px 12px;background:var(--chumbo);border-radius:6px;font-size:.9rem}
+#barra .erro{margin-bottom:8px;background:#000}
 #modelos{display:grid;gap:40px;margin-top:28px}
 .modelo{min-width:0}
 .modelo h2{font-size:1.35rem;font-weight:500;margin:0;letter-spacing:-.01em}
@@ -54,13 +58,8 @@ h1{font-size:clamp(1.75rem,8vw,2.4rem);line-height:1.12;font-weight:500;letter-s
 .acao:disabled{background:var(--cinza);color:var(--nude);cursor:not-allowed}
 dialog{border:0;padding:0;color:var(--nude);background:transparent;max-width:none;max-height:none}
 dialog::backdrop{background:rgba(0,0,0,.82)}
-#folha{position:fixed;inset:auto 0 0;width:100%;margin:0}
-#folha form{max-width:680px;margin:0 auto;background:var(--chumbo);border-radius:14px 14px 0 0;padding-top:22px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
-#folha h2{margin:0;font-size:1.3rem;font-weight:500}
-#folha label{display:grid;gap:6px;font-size:.9rem}
 #nome{width:100%;min-height:52px;padding:10px 14px;border:1.5px solid var(--suave);border-radius:8px;background:var(--preto);font-size:16px}
-#erro{margin:0;color:var(--nude);background:#000;padding:10px 12px;border-radius:6px;font-size:.9rem}
-.secundario{min-height:48px;border:0;background:none;color:var(--suave)}
+.secundario{min-height:48px;width:100%;margin-top:20px;border:1.5px solid var(--cinza);border-radius:8px;background:none;color:var(--nude)}
 #zoom{width:100%;height:100%;margin:0;background:var(--preto)}
 #zoom[open]{display:flex;flex-direction:column}
 #zoom figure{flex:1;min-height:0;margin:0;overflow:auto;display:flex;align-items:center;padding:8px}
@@ -85,13 +84,19 @@ footer{margin-top:44px;color:var(--suave);font-size:.8rem}
 <body>
 <header class="margem">
   <img class="logo" src="assets/logo.svg" width="1600" height="419" alt="YabaBuss">
-  <div id="topo">
-    <h1>Qual mousepad fica na sua mesa?</h1>
-    <p class="intro">Veja os 5 modelos, toque nas imagens para ampliar e escolha o seu favorito. Cada pessoa vota uma vez.</p>
-    <p id="aviso" hidden></p>
-  </div>
-</header>
-<main id="votacao" class="margem">
+  </header>
+<section id="capa" class="margem">
+  <h1>Qual mousepad fica na sua mesa?</h1>
+  <form id="entrada" novalidate>
+    <label for="nome">Digite seu nome para votar</label>
+    <input id="nome" name="nome" type="text" autocomplete="name" maxlength="60" enterkeyhint="go" required>
+    <p id="erro-entrada" class="erro" hidden role="alert"></p>
+    <button class="acao" id="entrar" type="submit">Entrar</button>
+  </form>
+</section>
+<main id="votacao" class="margem" hidden>
+  <h1 id="ola"></h1>
+  <p class="intro">Toque nas imagens para ampliar. Cada pessoa vota uma vez.</p>
   <form id="modelos" aria-label="Modelos de mousepad"></form>
   <footer>Tamanho dos mousepads: 90 × 40 cm. As imagens em mesa são simulações.</footer>
 </main>
@@ -99,28 +104,14 @@ footer{margin-top:44px;color:var(--suave);font-size:.8rem}
   <h1 id="r-titulo">Voto registrado</h1>
   <p class="intro" id="r-total"></p>
   <ol id="lista"></ol>
-  <footer>O resultado é atualizado sozinho conforme as pessoas votam.</footer>
+  <button class="secundario" id="atualizar" type="button">Atualizar placar</button>
 </section>
-<div id="barra"><div><button class="acao" id="votar" type="button" disabled>Escolha um modelo</button></div></div>
-<dialog id="folha">
-  <form id="f-nome" novalidate>
-    <h2 id="f-titulo">Confirme seu voto</h2>
-    <label for="nome">Seu nome
-      <input id="nome" name="nome" type="text" autocomplete="name" maxlength="60" enterkeyhint="send" required>
-    </label>
-    <p id="erro" hidden role="alert"></p>
-    <button class="acao" id="confirmar" type="submit">Confirmar voto</button>
-    <button class="secundario" id="cancelar" type="button">Voltar aos modelos</button>
-  </form>
-</dialog>
+<div id="barra" hidden><div><p id="erro-voto" class="erro" hidden role="alert"></p><button class="acao" id="votar" type="button" disabled>Escolha um modelo</button></div></div>
 <dialog id="zoom" aria-label="Imagem ampliada">
   <figure><img id="zoom-img" alt=""></figure>
   <div class="fim"><button class="acao" id="zoom-fechar" type="button">Fechar</button></div>
 </dialog>
-<script src="firebase-config.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="votos-config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
