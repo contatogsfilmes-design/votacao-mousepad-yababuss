@@ -15,9 +15,9 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
-    // Nomes: ninguém lê pela página. Só quem administra o projeto vê, no console do Firebase.
+    // Nomes: a página não lê. Só a conta de apuração (somente leitura) e o console do Firebase veem.
     match /nomes/{uid} {
-      allow read: if false;
+      allow read: if request.auth != null && request.auth.token.email == 'apuracao@votacao-yababuss.app';
       allow create: if request.auth != null
         && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['nome', 'modelo'])
