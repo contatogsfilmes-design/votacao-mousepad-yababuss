@@ -3,115 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Vote no mousepad YabaBuss</title>
-<meta name="description" content="Coloque seu nome, veja os 5 modelos e vote no seu favorito.">
-<meta name="theme-color" content="#000000">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vote no mousepad YabaBuss">
-<meta property="og:description" content="Coloque seu nome, veja os 5 modelos e vote no seu favorito.">
-<meta property="og:url" content="https://contatogsfilmes-design.github.io/votacao-mousepad-yababuss/">
-<meta property="og:image" content="https://contatogsfilmes-design.github.io/votacao-mousepad-yababuss/assets/compartilhar.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap">
+<title>Votação encerrada</title>
+<meta name="description" content="Esta votação foi encerrada. A votação atual é a dos novos kits de teclado e mouse da Pique.">
+<meta name="theme-color" content="#0B0A09">
+<meta name="robots" content="noindex">
 <style>
-:root{--preto:#000;--chumbo:#282828;--cinza:#646464;--nude:#F4F4F4;--suave:#B5B5B5;--linha:#3A3A3A;--fonte:Sora,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+:root{--fundo:#0B0A09;--texto:#F5F0EB;--suave:#B8AC9F;--ambar:#E89430;color-scheme:dark}
 *{box-sizing:border-box}
-html{background:var(--preto);-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--preto);color:var(--nude);font-family:var(--fonte);font-size:16px;line-height:1.5;padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
-[hidden]{display:none!important}
-img{display:block;max-width:100%}
-button,input{font:inherit;color:inherit}
-button{cursor:pointer}
-:focus-visible{outline:3px solid var(--nude);outline-offset:2px}
-.margem{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:680px;margin:0 auto}
-header{padding-top:calc(24px + env(safe-area-inset-top,0px));padding-bottom:12px}
-.logo{width:132px;height:auto}
-h1{font-size:clamp(1.75rem,8vw,2.4rem);line-height:1.12;font-weight:500;letter-spacing:-.02em;margin:28px 0 10px;text-wrap:balance}
-.intro{margin:0;color:var(--suave)}
-#entrada{display:grid;gap:12px;margin-top:24px}
-#entrada label{font-size:.95rem;color:var(--suave)}
-.erro{margin:0;padding:10px 12px;background:var(--chumbo);border-radius:6px;font-size:.9rem}
-#barra .erro{margin-bottom:8px;background:#000}
-#modelos{display:grid;gap:40px;margin-top:28px}
-.modelo{min-width:0}
-.modelo h2{font-size:1.35rem;font-weight:500;margin:0;letter-spacing:-.01em}
-.cab{display:flex;gap:10px;align-items:baseline}
-.cab span{color:var(--suave);font-size:.9rem;font-variant-numeric:tabular-nums}
-.modelo p{margin:4px 0 12px;color:var(--suave);font-size:.95rem}
-.foto{display:block;width:100%;padding:0;border:0;background:var(--chumbo);border-radius:8px;overflow:hidden;position:relative}
-.foto img{width:100%;height:auto}
-.foto small{position:absolute;right:8px;bottom:8px;padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.72);color:var(--nude);font-size:.72rem}
-.rot{display:block;font-size:.78rem;letter-spacing:.04em;color:var(--suave);margin:12px 0 6px}
-.arte{box-shadow:inset 0 0 0 1px var(--linha)}
-.escolher{display:flex;align-items:center;gap:12px;margin-top:14px;min-height:56px;padding:12px 16px;border:1.5px solid var(--cinza);border-radius:8px;font-weight:500}
-.escolher input{appearance:none;-webkit-appearance:none;flex:none;width:24px;height:24px;margin:0;border:2px solid var(--suave);border-radius:50%;background:transparent}
-.escolher input:checked{border:7px solid var(--preto);background:var(--preto);box-shadow:0 0 0 2px var(--preto)}
-.escolher:has(input:checked){background:var(--nude);border-color:var(--nude);color:var(--preto)}
-.escolher:has(input:focus-visible){outline:3px solid var(--nude);outline-offset:2px}
-#barra{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--chumbo);border-top:1px solid var(--linha);padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-#barra div{max-width:648px;margin:0 auto}
-.acao{display:block;width:100%;min-height:52px;border:0;border-radius:8px;background:var(--nude);color:var(--preto);font-weight:600;padding:10px 16px}
-.acao:disabled{background:var(--cinza);color:var(--nude);cursor:not-allowed}
-dialog{border:0;padding:0;color:var(--nude);background:transparent;max-width:none;max-height:none}
-dialog::backdrop{background:rgba(0,0,0,.82)}
-#nome{width:100%;min-height:52px;padding:10px 14px;border:1.5px solid var(--suave);border-radius:8px;background:var(--preto);font-size:16px}
-.secundario{min-height:48px;width:100%;margin-top:20px;border:1.5px solid var(--cinza);border-radius:8px;background:none;color:var(--nude)}
-#zoom{width:100%;height:100%;margin:0;background:var(--preto)}
-#zoom[open]{display:flex;flex-direction:column}
-#zoom figure{flex:1;min-height:0;margin:0;overflow:auto;display:flex;align-items:center;padding:8px}
-#zoom img{width:100%;height:auto;margin:auto}
-#zoom .fim{padding:10px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-#resultado{padding-top:32px}
-#resultado h1{margin-top:0}
-.linha-r{display:grid;gap:6px}
-#lista{display:grid;gap:18px;margin:26px 0 0;padding:0;list-style:none}
-.t{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-.t b{font-weight:500}
-.t span{color:var(--suave);font-variant-numeric:tabular-nums;font-size:.92rem;white-space:nowrap}
-.trilho{height:10px;background:var(--chumbo);border-radius:5px;overflow:hidden}
-.trilho i{display:block;height:100%;background:var(--nude);border-radius:5px;transition:width .4s}
-.meu .t b::after{content:" · seu voto";color:var(--suave);font-weight:400;font-size:.85rem}
-.mini{display:grid;gap:12px;margin-top:8px}
-.mini img{width:100%;height:auto;border-radius:8px}
-footer{margin-top:44px;color:var(--suave);font-size:.8rem}
-@media (prefers-reduced-motion:reduce){.trilho i{transition:none}}
+html{background:var(--fundo)}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+main{max-width:520px;margin:0 auto;padding:calc(48px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px));display:grid;gap:16px}
+h1{font-size:2rem;line-height:1.15;font-weight:600;margin:0;letter-spacing:-.02em}
+p{margin:0;color:var(--suave)}
+a{display:block;margin-top:8px;padding:16px;border-radius:8px;background:var(--ambar);color:#0B0A09;font-weight:600;text-align:center;text-decoration:none}
+a:focus-visible{outline:3px solid var(--texto);outline-offset:2px}
 </style>
 </head>
 <body>
-<header class="margem">
-  <img class="logo" src="assets/logo.svg" width="1600" height="419" alt="YabaBuss">
-  </header>
-<section id="capa" class="margem">
-  <h1>Qual mousepad fica na sua mesa?</h1>
-  <form id="entrada" novalidate>
-    <label for="nome">Digite seu nome para votar</label>
-    <input id="nome" name="nome" type="text" autocomplete="name" maxlength="60" enterkeyhint="go" required>
-    <p id="erro-entrada" class="erro" hidden role="alert"></p>
-    <button class="acao" id="entrar" type="submit">Entrar</button>
-  </form>
-</section>
-<main id="votacao" class="margem" hidden>
-  <h1 id="ola"></h1>
-  <p class="intro">Toque nas imagens para ampliar. Cada pessoa vota uma vez.</p>
-  <form id="modelos" aria-label="Modelos de mousepad"></form>
-  <footer>Tamanho dos mousepads: 90 × 40 cm. As imagens em mesa são simulações.</footer>
+<main>
+  <h1>Esta votação foi encerrada</h1>
+  <p>A votação certa agora é a dos novos kits de teclado e mouse da Pique.</p>
+  <a href="https://contatogsfilmes-design.github.io/votacao-kit-pique/">Ir para a votação da Pique</a>
 </main>
-<section id="resultado" class="margem" hidden aria-live="polite">
-  <h1 id="r-titulo">Voto registrado</h1>
-  <p class="intro" id="r-total"></p>
-  <ol id="lista"></ol>
-  <button class="secundario" id="atualizar" type="button">Atualizar placar</button>
-</section>
-<div id="barra" hidden><div><p id="erro-voto" class="erro" hidden role="alert"></p><button class="acao" id="votar" type="button" disabled>Escolha um modelo</button></div></div>
-<dialog id="zoom" aria-label="Imagem ampliada">
-  <figure><img id="zoom-img" alt=""></figure>
-  <div class="fim"><button class="acao" id="zoom-fechar" type="button">Fechar</button></div>
-</dialog>
-<script src="votos-config.js"></script>
-<script src="app.js"></script>
 </body>
 </html>
